@@ -199,10 +199,10 @@ class Quiz:
         self.choose_heading.grid(row=0)
 
         # Instructions for the quiz.
-        instructions = "Choose one of the two options provided. " \
-                       "You have a 50/50 chance of getting it right. " \
-                       "When you're done, or if you get stuck, you can " \
-                       "click on 'Help'."
+        instructions = "Choose which ever option you feel is correct " \
+                       "It shouldn't be that hard as its the same odds " \
+                       "To get it correct!" \
+                       " click on Help if you need more."
         self.instructions_label = Label(self.quiz_frame, text=instructions,
                                         wraplength=350, justify="left",
                                         bg=background)
@@ -236,30 +236,30 @@ class Quiz:
                                    command=lambda: self.check_answer("Minor"))
         self.Minor_button.grid(row=0, column=1, padx=5, pady=5)
 
+        # Frame for round results and navigation.
+        self.rounds_frame = Frame(self.quiz_frame)
+        self.rounds_frame.grid(row=5, padx=5, pady=5)
+
         # Label for displaying the user's choice and result.
         self.user_choice_label = Label(self.quiz_frame,
                                        text="When you choose things will,"
-                                            "be here!",
+                                            " be here!",
                                        bg="#E4A484", width=52,
                                        justify="left")
         self.user_choice_label.grid(row=5, padx=5, pady=5)
-
-        # Frame for round results and navigation.
-        self.rounds_frame = Frame(self.quiz_frame)
-        self.rounds_frame.grid(row=6, padx=5, pady=5)
-
-        # Label for displaying the current round result.
-        self.round_results_label = Label(self.rounds_frame, text="Your score and round will be here soon!",
-                                         width=44,
-                                         font=("Arial", 10),
-                                         bg=background)
-        self.round_results_label.grid(row=0, column=0)
 
         # Control frame for navigation buttons.
         self.control_frame = Frame(self.quiz_frame)
         self.control_frame.grid(row=7)
 
-        self.start_over_button = Button(self.control_frame, text="RESTART",
+        # Label for displaying the current round result.
+        self.round_results_label = Label(self.rounds_frame, text="",
+                                         width=44,
+                                         font=("Arial", 10),
+                                         bg=background)
+        self.round_results_label.grid(row=0, column=0)
+
+        self.start_over_button = Button(self.control_frame, text="Menu",
                                         fg="#FFFFFF", bg="#BE2727",
                                         font=("Arial", 11, "bold"),
                                         width=12,
@@ -268,7 +268,7 @@ class Quiz:
         self.start_over_button.grid(row=0, column=0)
 
         # Button for help.
-        self.help_button = Button(self.control_frame, text="HELP",
+        self.help_button = Button(self.control_frame, text="Instructions",
                                   fg="#FFFFFF", bg="#305CDE",
                                   font=("Arial", 11, "bold"),
                                   width=12,
@@ -277,7 +277,7 @@ class Quiz:
         self.help_button.grid(row=0, column=1)
 
         # Button to go to the next round.
-        self.next_button = Button(self.control_frame, text="NEXT",
+        self.next_button = Button(self.control_frame, text="Continue",
                                   fg="#FFFFFF", bg="#6C9484",
                                   font=("Arial", 11, "bold"),
                                   width=12, state=DISABLED,
