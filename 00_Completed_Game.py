@@ -272,6 +272,7 @@ class Quiz:
                                          bg=background)
         self.round_results_label.grid(row=0, column=0)
 
+        # start over button 
         self.start_over_button = Button(self.control_frame, text="Menu",
                                         fg="#FFFFFF", bg="#BE2727",
                                         font=("Arial", 11, "bold"),
