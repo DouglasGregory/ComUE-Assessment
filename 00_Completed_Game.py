@@ -52,15 +52,18 @@ class ChooseRounds:
         self.how_many_frame = Frame(self.intro_frame)
         self.how_many_frame.grid(row=2)
 
+        # create a output label for displaying messages
         self.output_label = Label(self.intro_frame, text="",
                                   fg="#980002")
-        self.output_label.grid(row=3)
+        self.output_label.grid(row=3) # label in row 3
 
+        # button colours
         btn_colour_value = [
             ["#E4D4AC", 5],
             ["#E4A484", 10]
         ]
 
+        # create buttons for number of rounds
         for item in range(0, 2):
             self.rounds_button = Button(self.how_many_frame,
                                         fg=button_fg,
@@ -394,8 +397,8 @@ class DisplayHelp:
         help_text = "To play this quiz your task is to" \
                     " see how many questions you can get correct by guessing between, " \
                     "Major and Minor Gods." \
-                    " When you run this game you have these options below..\n" \
-                    "options - 5, 10 or a custom amount (1-99). \n" \
+                    " Choosing between these two options you will be informed after if  \n" \
+                    " you got it correct or not enjoy and have fun.\n" \
 
         self.help_text_label = Label(self.help_frame, bg=background,
                                      text=help_text, wraplength=350,
